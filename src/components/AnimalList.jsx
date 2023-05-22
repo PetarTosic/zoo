@@ -1,35 +1,40 @@
 import { useState } from "react";
+import AnimalForm from "./AnimalForm";
+import AnimalsDisplay from "./AnimalsDisplay";
+import SectorsDisplay from "./SectorsDisplay";
 
 const listOfAnimals = [
   {
     name: "krava",
-    species: "mamel",
+    species: "mammal",
     date_of_birth: new Date().toDateString(),
-    sector: "papkar"
+    sector: "snake"
   },
   {
     name: "delfin",
-    species: "mamel",
-    sector: "sisar"
+    species: "mammal",
+    sector: "snake"
   },
   {
     name: "koza",
-    species: "mamel",
-    sector: "papkar"
+    species: "mammal",
+    sector: "bird"
   },
   {
     name: "ovca",
-    species: "mamel",
+    species: "mammal",
     date_of_birth: new Date().toDateString(),
-    sector: "papkar"
+    sector: "bird"
   },
   {
     name: "pas",
-    species: "mamel",
+    species: "mammal",
     date_of_birth: new Date().toDateString(),
-    sector: "sisar"
+    sector: "bird"
   },
 ];
+
+const animalSectors = ["bird", "snake"];
 
 const AnimalList = () => {
   //IDE HOOK
@@ -86,51 +91,9 @@ const AnimalList = () => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit} style={{border: "1px solid black", padding: "5px", borderRadius: "5px"}}>
-        Name:
-        <input type="text" name="name" value={state.name} onChange={handleInputChange} />
-        Species:
-        <input type="text" name="species" value={state.species} onChange={handleInputChange} />
-        Date:
-        <input type="date" name="date_of_birth" value={state.date_of_birth} onChange={handleInputChange} />
-        <select name="sector" value={state.sector} onChange={handleInputChange} >
-          <option disabled defaultValue>Select sector:</option>
-          <option value="sisar">sisar</option>
-          <option value="papkar">papkar</option>
-          <option value="ptica">ptica</option>
-        </select>
-        <button type="submit">Add animal</button>
-      </form>
-      <table>
-        <thead>
-          <tr>
-            <th>Ime zivotinje</th>
-            <th>Vrsta zivotinje</th>
-            <th>Datum zivotinje</th>
-            <th>Remove</th>
-          </tr>
-        </thead>
-        <tbody>
-          {animals.map((animal, index) => (
-            // pozovi hook
-            <tr key={index}>
-              <td>{animal.name}</td>
-              <td>{animal.species}</td>
-              <td>{animal.sector}</td>
-              <td>{animal.date_of_birth ? animal.date_of_birth : "Nepoznato"}</td>
-              <td>
-                <button onClick={() => onRemove(animal.name)}>Remove</button>
-              </td>
-              <td>
-                <button onClick={() => onMoveToTop(animal.name)}>Move To Top</button>
-              </td>
-              <td>
-                <button onClick={() => onSector(animal.sector)}>Show Sector</button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <AnimalForm handleSubmit={handleSubmit} handleInputChange={handleInputChange} state={state}/>
+      <AnimalsDisplay animals={animals} onRemove={onRemove} onMoveToTop={onMoveToTop}/>
+      <SectorsDisplay animals={animals} animalSectors={animalSectors} onSector={onSector}/>
     </div>
   );
 };
