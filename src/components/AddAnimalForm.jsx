@@ -36,7 +36,7 @@ const AddAnimalForm = ({handleSubmit, handleInputChange, state, clearValues}) =>
             <option value="snake">snake</option>
           </select>
         </div>
-        <button type="submit" class="submit" onClick={clearSmth}>Add animal</button>
+        <button type="submit" class="submit">Add animal</button>
         <button class="submit"><Link to={`/Animals`} style={{color: "inherit", textDecoration: "none"}}>Return</Link></button>
     </form>
   )
