@@ -21,6 +21,7 @@ const AllAnimals = ({animals, onRemove, onMoveToTop}) => {
         </tbody>
       </table>
       <div ><Link class="button-3" style={{color: "inherit", textDecoration: "none", margin: "10px"}} to={`/AddAnimal`}>Add Animal</Link></div>
+      <div ><Link class="button-3" style={{color: "inherit", textDecoration: "none", margin: "10px"}} to={`/Sectors`}>Sectors</Link></div>
     </div>
   );
 }
