@@ -3,11 +3,17 @@ import '../form.css';
 
 const AddAnimalForm = ({handleSubmit, handleInputChange, state, clearValues}) => {
   
-  const clearSmth = () => {
-    state.name = "";
-    state.species = "";
-    state.date_of_birth = "";
-    state.sector = "";
+  // const clearSmth = () => {
+  //   setTimeout(() => {
+  //     state.name = "";
+  //     state.species = "";
+  //     state.date_of_birth = "";
+  //     state.sector = "";
+  //   }, 500);
+  // }
+  
+  const addedAnimal = () => {
+    alert('Animal added!');
   }
 
   return (
@@ -36,7 +42,7 @@ const AddAnimalForm = ({handleSubmit, handleInputChange, state, clearValues}) =>
             <option value="snake">snake</option>
           </select>
         </div>
-        <button type="submit" class="submit">Add animal</button>
+        <button type="submit" class="submit" onClick={addedAnimal}>Add animal</button>
         <button class="submit"><Link to={`/Animals`} style={{color: "inherit", textDecoration: "none"}}>Return</Link></button>
     </form>
   )

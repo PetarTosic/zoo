@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const AllAnimals = ({animals, onRemove, onMoveToTop}) => {
   return (
-    <div class="form" style={{width: "750px", height: "450px"}}>
+    <div class="form" style={{width: "750px", height: "fit-content"}}>
     <table style={{color: "white"}}>
         <thead>
           <tr class="input-container ic1">
