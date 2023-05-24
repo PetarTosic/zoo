@@ -1,13 +1,12 @@
 import Animal from "./Animal";
 import { Link } from "react-router-dom";
 
-
-const AllAnimals = ({animals}) => {
+const AllAnimals = ({animals, onRemove, onMoveToTop}) => {
   return (
-    <div>
+    <div class="form" style={{width: "750px", height: "450px"}}>
     <table>
         <thead>
-          <tr>
+          <tr class="input-container ic1">
             <th>Ime zivotinje</th>
             <th>Ne znam</th>
             <th>Vrsta zivotinje</th>
@@ -17,11 +16,11 @@ const AllAnimals = ({animals}) => {
         </thead>
         <tbody>
           {animals.map((animal, index) => (
-            <Animal key={index} animal={animal} index={index} />
+            <Animal key={index} animal={animal} index={index}  onRemove={onRemove} onMoveToTop={onMoveToTop}/>
           ))}
         </tbody>
       </table>
-      <div><Link to={`/AddAnimal`}>Add Animal</Link></div>
+      <div ><button class="submit" style={{width: "fit-content"}}><Link style={{color: "inherit", textDecoration: "none"}} to={`/AddAnimal`}>Add Animal</Link></button></div>
     </div>
   );
 }
