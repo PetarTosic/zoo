@@ -15,7 +15,7 @@ const Animal = ({animal, index, onRemove, onMoveToTop}) => {
         <button onClick={() => onMoveToTop(animal.name)} class="button-3">Move To Top</button>
       </td>
       <td>
-        <Link to={`/animals/${index}`}><button class="button-3">See</button></Link>
+        <Link class="button-3" to={`/animals/${index}`}>See</Link>
       </td>
     </tr>
   )

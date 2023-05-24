@@ -9,7 +9,7 @@ const AnimalId = ({animals, index}) => {
       <div>Animal species: {animal.species}</div>
       <div>Animal date of birth: {animal.date_of_birth}</div>
       <div>Animal sector: {animal.sector}</div>
-      <button class="submit"><Link to={`/Animals`} style={{color: "inherit", textDecoration: "none"}}>Return</Link></button>
+      <Link class="button-3" to={`/Animals`} style={{color: "inherit", textDecoration: "none", margin: "5px"}}>Return</Link>
     </div>
   );
 }
