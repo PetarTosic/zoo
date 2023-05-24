@@ -1,5 +1,5 @@
 const Welcome = () => {
-  return <div>Dobrodosli... Ulepsati sa CSS-om.</div>
+  return <div style={{color: "white", fontSize: "100px", border: "3px solid white", borderRadius: "50px", padding: "20px"}}>Dobrodosli!</div>
 }
 
 export default Welcome;
